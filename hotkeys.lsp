@@ -16,10 +16,8 @@
 (defun cut-line ()
   "Cut current line."
   (interactive) 
-  (setq currcol (current-column))
   (kill-ring-save (line-beginning-position) (line-end-position))
   (kill-whole-line)
-  (move-to-column currcol)
 )
 (global-set-key (kbd "C-c <deletechar>") 'cut-line)
 
